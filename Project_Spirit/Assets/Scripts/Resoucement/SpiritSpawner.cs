@@ -12,7 +12,7 @@ public class SpiritSpawner : MonoBehaviour
     [SerializeField]
     GameObject SpawnUI;
     [SerializeField]
-    Transform SpawnParent;
+    //Transform SpawnParent;
 
     GameObject Spiritprefab;
     [SerializeField]
@@ -90,7 +90,7 @@ public class SpiritSpawner : MonoBehaviour
 
             if (nodes[row, col].spiritElement == elementNum) return;    // ´ë±â¿­ÀÌ ²Ë ÂþÀ»‹š ¹ÝÈ¯.
             Vector3 newPosition = new Vector3(row, col, 0);
-            GameObject SpiritObject = Instantiate(Spiritprefab, new Vector3(newPosition.x + 0.5f, newPosition.y + 0.5f, 0), Quaternion.identity, SpawnParent);
+            GameObject SpiritObject = Instantiate(Spiritprefab, new Vector3(newPosition.x + 0.5f, newPosition.y + 0.5f, 0), Quaternion.identity);
             SpiritObject.GetComponent<DetectMove>().CurposX = row + 0.5f;
             SpiritObject.GetComponent<DetectMove>().CurposY = col + 0.5f;
             SpiritObject.GetComponent<DetectMove>()._dir = Redirection(row, col);
