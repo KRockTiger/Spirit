@@ -514,8 +514,16 @@ partial class CraftManager
     }
     public void PlaceSignTile(Vector3Int pos)
     {
+<<<<<<< HEAD:Project_Spirit/Assets/Scripts/Craft/CraftManager.cs
         if (CanPlaceSignTile(pos))                    
             TileDataManager.instance.SetTileType(pos.x, pos.y, 5);        
+=======
+        if (CanPlaceSignTile(pos))
+        {            
+            GameTilemap.SetTile(pos, selectedSign);
+            TileDataManager.instance.SetTileType(pos.x, pos.y, 5);
+        }
+>>>>>>> parent of c80cbca (signTile update):Project_Spirit/Assets/Scripts/CraftManager.cs
         else        
             Destroy(mouseIndicator.gameObject);
         
